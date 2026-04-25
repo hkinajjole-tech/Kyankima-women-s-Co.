@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kyankima Women's Cooperative — handcrafts, fresh produce, and community health from Mukono District, Uganda.">
+<title>Kyankima Women's Cooperative | Mukono, Uganda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-deep: #1a3a2a;
+  --green-mid:  #2d6a4f;
+  --green-soft: #52b788;
+  --green-pale: #d8f3dc;
+  --earth:      #a0522d;
+  --earth-light:#e8c9a0;
+  --cream:      #fdf8f0;
+  --warm-white: #fffef9;
+  --text-main:  #1c1c1c;
+  --text-muted: #5a5a5a;
+  --gold:       #c9922a;
+  --radius:     12px;
+  --shadow:     0 4px 24px rgba(0,0,0,0.10);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:var(--text-main);font-size:16px;line-height:1.7}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--green-deep);padding:0 1.25rem}
+.nav-inner{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:'Playfair Display',serif;color:#fff;font-size:1.15rem;font-weight:700;letter-spacing:0.02em}
+.nav-logo span{color:var(--green-soft)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.85);font-size:0.92rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--green-soft)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.mobile-menu{display:none;background:var(--green-deep);padding:1rem 1.25rem 1.5rem}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;color:rgba(255,255,255,0.85);padding:0.6rem 0;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+.mobile-menu a:last-child{border-bottom:none}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--green-deep) 0%,var(--green-mid) 100%);color:#fff;padding:4rem 1.25rem 5rem;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:-40px;left:0;right:0;height:80px;background:var(--cream);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:1rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);line-height:1.2;margin-bottom:1rem}
+.hero h1 em{font-style:normal;color:var(--green-soft)}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,0.85);margin-bottom:2rem;max-width:480px}
+.btn{display:inline-block;padding:0.75rem 1.75rem;border-radius:8px;font-weight:600;font-size:0.95rem;transition:all .25s;cursor:pointer}
+.btn-primary{background:var(--gold);color:#fff}
+.btn-primary:hover{background:#a87820;transform:translateY(-1px)}
+.btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.5);color:#fff;margin-left:0.75rem}
+.btn-outline:hover{background:rgba(255,255,255,0.1)}
+.hero-visual{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.hero-card{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius);padding:1rem 1.25rem;text-align:center;min-width:110px;flex:1}
+.hero-card .num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--green-soft)}
+.hero-card .lbl{font-size:0.8rem;color:rgba(255,255,255,0.75);margin-top:2px}
+
+/* SECTIONS */
+section{padding:4rem 1.25rem}
+.section-inner{max-width:1100px;margin:auto}
+.section-label{font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-soft);margin-bottom:0.5rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.25;margin-bottom:1rem;color:var(--green-deep)}
+.section-sub{color:var(--text-muted);max-width:600px;margin-bottom:2.5rem}
+
+/* ABOUT */
+#about{background:var(--warm-white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-story{font-size:1rem;color:var(--text-muted);line-height:1.8}
+.about-story p+p{margin-top:1rem}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.stat-card{background:var(--green-pale);border-radius:var(--radius);padding:1.25rem;text-align:center}
+.stat-card .n{font-family:'Playfair Display',serif;font-size:2rem;color:var(--green-deep);font-weight:700}
+.stat-card .l{font-size:0.85rem;color:var(--green-mid);margin-top:2px}
+.founder-box{margin-top:1.5rem;background:var(--earth-light);border-left:4px solid var(--earth);border-radius:0 var(--radius) var(--radius) 0;padding:1rem 1.25rem}
+.founder-box p{font-size:0.92rem;color:var(--text-main);font-style:italic}
+.founder-box strong{font-style:normal;color:var(--earth)}
+
+/* PRODUCTS */
+#products{background:var(--cream)}
+.category-tabs{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.tab{padding:0.45rem 1.1rem;border-radius:20px;border:1.5px solid var(--green-mid);font-size:0.85rem;font-weight:600;color:var(--green-mid);cursor:pointer;background:transparent;transition:all .2s}
+.tab.active,.tab:hover{background:var(--green-mid);color:#fff}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem}
+.product-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,0.14)}
+.product-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:var(--green-pale)}
+.product-body{padding:1rem 1.1rem 1.25rem}
+.product-cat{font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--green-soft);margin-bottom:4px}
+.product-name{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--green-deep);margin-bottom:6px}
+.product-desc{font-size:0.85rem;color:var(--text-muted);margin-bottom:0.75rem}
+.product-price{font-weight:700;color:var(--earth);font-size:1rem}
+.product-cta{display:block;margin-top:0.75rem;text-align:center;background:var(--green-mid);color:#fff;padding:0.5rem;border-radius:6px;font-size:0.88rem;font-weight:600;transition:background .2s}
+.product-cta:hover{background:var(--green-deep)}
+.product-card[data-cat].hidden{display:none}
+
+/* HEALTH TIPS */
+#health{background:var(--green-deep);color:#fff}
+#health .section-title{color:var(--green-soft)}
+#health .section-sub{color:rgba(255,255,255,0.7)}
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem}
+.tip-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);padding:1.5rem}
+.tip-icon{font-size:2rem;margin-bottom:0.75rem}
+.tip-worker{font-size:0.78rem;font-weight:600;letter-spacing:0.06em;color:var(--green-soft);text-transform:uppercase;margin-bottom:0.4rem}
+.tip-title{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:0.5rem}
+.tip-body{font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7}
+
+/* FAQ */
+#faq{background:var(--warm-white)}
+.faq-list{max-width:720px}
+.faq-item{border-bottom:1px solid #e0e0e0}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:1.1rem 0;display:flex;align-items:center;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:600;color:var(--green-deep)}
+.faq-q .icon{font-size:1.3rem;color:var(--green-soft);transition:transform .25s;flex-shrink:0;margin-left:1rem}
+.faq-q.open .icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s}
+.faq-a.open{max-height:300px;padding-bottom:1rem}
+.faq-a p{font-size:0.95rem;color:var(--text-muted);line-height:1.75}
+
+/* CONTACT */
+#contact{background:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact-info p{color:var(--text-muted);margin-bottom:1.5rem}
+.contact-detail{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:1rem}
+.contact-detail .icon{font-size:1.25rem;flex-shrink:0;margin-top:2px}
+.contact-detail div strong{display:block;font-size:0.85rem;color:var(--green-deep)}
+.contact-detail div span{font-size:0.92rem;color:var(--text-muted)}
+.whatsapp-btn{display:inline-flex;align-items:center;gap:0.6rem;margin-top:1rem;background:#25D366;color:#fff;padding:0.75rem 1.5rem;border-radius:8px;font-weight:600;font-size:0.95rem;transition:background .2s}
+.whatsapp-btn:hover{background:#1da851}
+.contact-form{background:#fff;border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow)}
+.form-group{margin-bottom:1.1rem}
+.form-group label{display:block;font-size:0.85rem;font-weight:600;color:var(--green-deep);margin-bottom:5px}
+.form-group input,.form-group textarea,.form-group select{width:100%;border:1.5px solid #ddd;border-radius:8px;padding:0.65rem 0.9rem;font-family:'Source Sans 3',sans-serif;font-size:0.95rem;color:var(--text-main);background:#fafafa;transition:border-color .2s}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--green-mid);background:#fff}
+.form-group textarea{resize:vertical;min-height:110px}
+.form-submit{width:100%;background:var(--green-mid);color:#fff;border:none;border-radius:8px;padding:0.85rem;font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;transition:background .2s}
+.form-submit:hover{background:var(--green-deep)}
+.form-success{display:none;text-align:center;padding:1rem;background:var(--green-pale);border-radius:8px;color:var(--green-deep);font-weight:600}
+
+/* FOOTER */
+footer{background:var(--green-deep);color:rgba(255,255,255,0.7);padding:2.5rem 1.25rem 1.5rem}
+.footer-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
+.footer-brand .name{font-family:'Playfair Display',serif;color:#fff;font-size:1.1rem;margin-bottom:0.5rem}
+.footer-brand p{font-size:0.88rem;line-height:1.6}
+.footer-col h4{color:#fff;font-size:0.88rem;font-weight:600;margin-bottom:0.75rem;text-transform:uppercase;letter-spacing:0.06em}
+.footer-col a{display:block;font-size:0.88rem;color:rgba(255,255,255,0.65);padding:2px 0;transition:color .2s}
+.footer-col a:hover{color:var(--green-soft)}
+.footer-bottom{max-width:1100px;margin:2rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1rem;display:flex;justify-content:space-between;align-items:center;font-size:0.82rem}
+.badge{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,0.1);padding:3px 10px;border-radius:12px;font-size:0.78rem}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-visual{display:grid;grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .btn-outline{display:none}
+}
+@media(max-width:480px){
+  .products-grid{grid-template-columns:1fr 1fr}
+  .tips-grid{grid-template-columns:1fr}
+  .hero-visual{grid-template-columns:1fr 1fr}
+}
+
+/* ACCESSIBILITY */
+:focus-visible{outline:3px solid var(--green-soft);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.animate{opacity:0}
+.animate.visible{animation:fadeUp 0.55s ease forwards}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo" aria-label="Kyankima Women's Cooperative home">Kyankima <span>Women's Coop</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#health">Health Tips</a></li>
+      <li><a href="#faq">FAQs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu" role="menu">
+    <a href="#about" onclick="closeMenu()">About Us</a>
+    <a href="#products" onclick="closeMenu()">Our Products</a>
+    <a href="#health" onclick="closeMenu()">Health Tips</a>
+    <a href="#faq" onclick="closeMenu()">FAQs</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="home" class="hero" role="banner">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag">Mukono District, Uganda · Est. 2019</div>
+      <h1>Women Growing <em>Together</em>, Selling to the World</h1>
+      <p>47 women producing handcrafts, fresh agricultural goods, and sharing community health knowledge from the heart of Mukono District.</p>
+      <div>
+        <a href="#products" class="btn btn-primary">Shop Our Products</a>
+        <a href="#about" class="btn btn-outline">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-card"><div class="num">47</div><div class="lbl">Active Members</div></div>
+      <div class="hero-card"><div class="num">23</div><div class="lbl">Products</div></div>
+      <div class="hero-card"><div class="num">2019</div><div class="lbl">Founded</div></div>
+      <div class="hero-card"><div class="num">3</div><div class="lbl">Health Workers</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="section-inner">
+    <div class="section-label">Who We Are</div>
+    <h2 class="section-title" id="about-heading">Built by Women, for Community</h2>
+    <div class="about-grid animate">
+      <div class="about-story">
+        <p>Kyankima Women's Cooperative was founded in 2019 by 47 women in Mukono District, Uganda, who shared a vision: that collective effort could transform small-scale farming and handcraft production into a sustainable livelihood.</p>
+        <p>What began as informal market days and word-of-mouth trade has grown into a registered community-based organisation. Our members grow vegetables, fruits, and grains; weave and craft baskets, mats, and textiles; and work alongside health professionals to bring practical wellness knowledge to our communities.</p>
+        <p>We are now proudly online — connecting our products and knowledge to customers across Uganda and beyond.</p>
+        <div class="founder-box">
+          <p>"We started with nothing but our hands and our trust in each other. Today we sell to Kampala, and tomorrow — the world."</p>
+          <strong>— Nalwoga Judith, Chairperson</strong>
+        </div>
+      </div>
+      <div>
+        <div class="about-stats">
+          <div class="stat-card"><div class="n">47</div><div class="l">Members</div></div>
+          <div class="stat-card"><div class="n">23</div><div class="l">Products</div></div>
+          <div class="stat-card"><div class="n">3</div><div class="l">Health Partners</div></div>
+          <div class="stat-card"><div class="n">2019</div><div class="l">Est.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" aria-labelledby="products-heading">
+  <div class="section-inner">
+    <div class="section-label">What We Make</div>
+    <h2 class="section-title" id="products-heading">Our 23 Products</h2>
+    <p class="section-sub">Grown and crafted by our members in Mukono District. All products are available for order — call or WhatsApp us to arrange delivery across Uganda.</p>
+    <div class="category-tabs" role="tablist" aria-label="Filter products by category">
+      <button class="tab active" data-filter="all" role="tab" aria-selected="true" onclick="filterProducts('all',this)">All (23)</button>
+      <button class="tab" data-filter="agriculture" role="tab" aria-selected="false" onclick="filterProducts('agriculture',this)">Agriculture (10)</button>
+      <button class="tab" data-filter="handcraft" role="tab" aria-selected="false" onclick="filterProducts('handcraft',this)">Handcrafts (9)</button>
+      <button class="tab" data-filter="health" role="tab" aria-selected="false" onclick="filterProducts('health',this)">Health Products (4)</button>
+    </div>
+    <div class="products-grid animate" id="productsGrid">
+      <!-- Agriculture (10) -->
+      <article class="product-card" data-cat="agriculture">
+        <div class="product-img" aria-hidden="true">🌽</div>
+        <div class="product-body">
+          <div class="product-cat">Agriculture</div>
+          <h3 class="product-name">Fresh Maize</h3>
+          <p class="product-desc">Sun-dried or fresh cobs from our cooperative farms in Mukono.</p>
+          <div class="product-price">UGX 3,000 / kg</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="agriculture">
+        <div class="product-img" aria-hidden="true">🍅</div>
+        <div class="product-body">
+          <div class="product-cat">Agriculture</div>
+          <h3 class="product-name">Tomatoes</h3>
+          <p class="product-desc">Organically grown, sold by the tray or kilogram.</p>
+          <div class="product-price">UGX 4,000 / kg</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="agriculture">
+        <div class="product-img" aria-hidden="true">🥬</div>
+        <div class="product-body">
+          <div class="product-cat">Agriculture</div>
+          <h3 class="product-name">Nakati (African Nightshade)</h3>
+          <p class="product-desc">Freshly harvested traditional leafy vegetable, rich in iron.</p>
+          <div class="product-price">UGX 2,000 / bunch</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="agriculture">
+        <div class="product-img" aria-hidden="true">🍌</div>
+        <div class="product-body">
+          <div class="product-cat">Agriculture</div>
+          <h3 class="product-name">Matooke (Green Bananas)</h3>
+          <p class="product-desc">Staple Uganda cooking banana, sold by the bunch.</p>
+          <div class="product-price">UGX 15,000 / bunch</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="agriculture">
+        <div class="product-img" aria-hidden="true">🥜</div>
+        <div class="product-body">
+          <div class="product-cat">Agriculture</div>
+          <h3 class="product-name">Groundnuts</h3>
+          <p class="product-desc">Locally grown and sun-dried. Available shelled or unshelled.</p>
+          <div class="product-price">UGX 7,000 / kg</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="agriculture">
+        <div class="product-img" aria-hidden="true">🫘</div>
+        <div class="product-body">
+          <div class="product-cat">Agriculture</div>
+          <h3 class="product-name">Beans (Nambale)</h3>
+          <p class="product-desc">High-protein local beans, dried and ready for cooking.</p>
+          <div class="product-price">UGX 5,500 / kg</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="agriculture">
+        <div class="product-img" aria-hidden="true">🧅</div>
+        <div class="product-body">
+          <div class="product-cat">Agriculture</div>
+          <h3 class="product-name">Onions</h3>
+          <p class="product-desc">Red and white onions, sold by kilogram or sack.</p>
+          <div class="product-price">UGX 4,500 / kg</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="agriculture">
+        <div class="product-img" aria-hidden="true">🌶️</div>
+        <div class="product-body">
+          <div class="product-cat">Agriculture</div>
+          <h3 class="product-name">Hot Peppers</h3>
+          <p class="product-desc">Fresh or sun-dried local chilli peppers. Mild to hot varieties.</p>
+          <div class="product-price">UGX 8,000 / kg</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="agriculture">
+        <div class="product-img" aria-hidden="true">🍠</div>
+        <div class="product-body">
+          <div class="product-cat">Agriculture</div>
+          <h3 class="product-name">Sweet Potatoes</h3>
+          <p class="product-desc">Orange-flesh variety, rich in Vitamin A. Sold by sack or kg.</p>
+          <div class="product-price">UGX 3,500 / kg</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="agriculture">
+        <div class="product-img" aria-hidden="true">🥦</div>
+        <div class="product-body">
+          <div class="product-cat">Agriculture</div>
+          <h3 class="product-name">Sukuma Wiki (Kale)</h3>
+          <p class="product-desc">Freshly cut greens, delivered within 24 hrs to Kampala.</p>
+          <div class="product-price">UGX 1,500 / bunch</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <!-- Handcrafts (9) -->
+      <article class="product-card" data-cat="handcraft">
+        <div class="product-img" aria-hidden="true">🧺</div>
+        <div class="product-body">
+          <div class="product-cat">Handcrafts</div>
+          <h3 class="product-name">Woven Basket (Large)</h3>
+          <p class="product-desc">Hand-woven from banana fibre. Storage and decorative use.</p>
+          <div class="product-price">UGX 35,000</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="handcraft">
+        <div class="product-img" aria-hidden="true">🎨</div>
+        <div class="product-body">
+          <div class="product-cat">Handcrafts</div>
+          <h3 class="product-name">Woven Mat (5×3 ft)</h3>
+          <p class="product-desc">Traditional floor mat woven from papyrus reeds, natural dyes.</p>
+          <div class="product-price">UGX 45,000</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="handcraft">
+        <div class="product-img" aria-hidden="true">👜</div>
+        <div class="product-body">
+          <div class="product-cat">Handcrafts</div>
+          <h3 class="product-name">Raffia Shopping Bag</h3>
+          <p class="product-desc">Eco-friendly tote bag. Available in natural and dyed colours.</p>
+          <div class="product-price">UGX 22,000</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="handcraft">
+        <div class="product-img" aria-hidden="true">🪴</div>
+        <div class="product-body">
+          <div class="product-cat">Handcrafts</div>
+          <h3 class="product-name">Woven Flower Vase</h3>
+          <p class="product-desc">Decorative vase woven from sisal. Perfect as a gift or decor.</p>
+          <div class="product-price">UGX 18,000</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="handcraft">
+        <div class="product-img" aria-hidden="true">📿</div>
+        <div class="product-body">
+          <div class="product-cat">Handcrafts</div>
+          <h3 class="product-name">Bead Jewellery Set</h3>
+          <p class="product-desc">Handmade necklace and earring set using local glass beads.</p>
+          <div class="product-price">UGX 28,000 / set</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="handcraft">
+        <div class="product-img" aria-hidden="true">🪣</div>
+        <div class="product-body">
+          <div class="product-cat">Handcrafts</div>
+          <h3 class="product-name">Storage Basket (Small)</h3>
+          <p class="product-desc">Compact lidded basket for household storage, woven from reeds.</p>
+          <div class="product-price">UGX 20,000</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="handcraft">
+        <div class="product-img" aria-hidden="true">🖼️</div>
+        <div class="product-body">
+          <div class="product-cat">Handcrafts</div>
+          <h3 class="product-name">Wall Hanging (Barkcloth)</h3>
+          <p class="product-desc">Traditional Ugandan barkcloth art piece, hand-painted by members.</p>
+          <div class="product-price">UGX 55,000</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="handcraft">
+        <div class="product-img" aria-hidden="true">🛋️</div>
+        <div class="product-body">
+          <div class="product-cat">Handcrafts</div>
+          <h3 class="product-name">Table Runner (Woven)</h3>
+          <p class="product-desc">Colourful table runner, 150cm long. Hand-dyed cotton weave.</p>
+          <div class="product-price">UGX 32,000</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="handcraft">
+        <div class="product-img" aria-hidden="true">🎁</div>
+        <div class="product-body">
+          <div class="product-cat">Handcrafts</div>
+          <h3 class="product-name">Gift Hamper Basket</h3>
+          <p class="product-desc">A woven basket filled with cooperative products. Custom orders welcome.</p>
+          <div class="product-price">From UGX 80,000</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <!-- Health Products (4) -->
+      <article class="product-card" data-cat="health">
+        <div class="product-img" aria-hidden="true">🌿</div>
+        <div class="product-body">
+          <div class="product-cat">Health Products</div>
+          <h3 class="product-name">Moringa Leaf Powder</h3>
+          <p class="product-desc">100% natural moringa dried and ground. Rich in vitamins A, C, E.</p>
+          <div class="product-price">UGX 12,000 / 100g</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="health">
+        <div class="product-img" aria-hidden="true">🍯</div>
+        <div class="product-body">
+          <div class="product-cat">Health Products</div>
+          <h3 class="product-name">Raw Wild Honey</h3>
+          <p class="product-desc">Unprocessed honey from local beekeepers. Medicinal and culinary.</p>
+          <div class="product-price">UGX 25,000 / 500ml</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="health">
+        <div class="product-img" aria-hidden="true">🌱</div>
+        <div class="product-body">
+          <div class="product-cat">Health Products</div>
+          <h3 class="product-name">Herbal Tea Blend</h3>
+          <p class="product-desc">Lemongrass, ginger, and moringa blend. Promotes digestion and immunity.</p>
+          <div class="product-price">UGX 9,000 / pack</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+      <article class="product-card" data-cat="health">
+        <div class="product-img" aria-hidden="true">🧴</div>
+        <div class="product-body">
+          <div class="product-cat">Health Products</div>
+          <h3 class="product-name">Shea Butter (Raw)</h3>
+          <p class="product-desc">Pure unrefined shea butter. For skin and hair care. 250g jars.</p>
+          <div class="product-price">UGX 18,000 / jar</div>
+          <a href="#contact" class="product-cta">Order via WhatsApp</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HEALTH TIPS -->
+<section id="health" aria-labelledby="health-heading">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--green-soft)">Monthly Health Tips</div>
+    <h2 class="section-title" id="health-heading">Wellness from Our Community</h2>
+    <p class="section-sub">Our three partner health workers share practical, locally relevant health advice every month.</p>
+    <div class="tips-grid animate">
+      <article class="tip-card">
+        <div class="tip-icon" aria-hidden="true">🥗</div>
+        <div class="tip-worker">Sr. Nakato Aisha · Community Nurse</div>
+        <h3 class="tip-title">Eating Local for Better Nutrition</h3>
+        <p class="tip-body">Nakati, sweet potato leaves, and groundnuts provide more iron and protein than many imported supplements. Cook with minimal water to preserve nutrients. A balanced local meal is often more nutritious than expensive packaged foods.</p>
+      </article>
+      <article class="tip-card">
+        <div class="tip-icon" aria-hidden="true">💧</div>
+        <div class="tip-worker">Mr. Wasswa David · Environmental Health Officer</div>
+        <h3 class="tip-title">Safe Water Practices at Home</h3>
+        <p class="tip-body">Boil drinking water for at least one minute or use a locally made ceramic filter. Store water in a covered, clean container. Wash hands with soap before cooking and after using the latrine — these two habits prevent most waterborne illnesses.</p>
+      </article>
+      <article class="tip-card">
+        <div class="tip-icon" aria-hidden="true">👶</div>
+        <div class="tip-worker">Ms. Namukasa Rehema · Midwife</div>
+        <h3 class="tip-title">Maternal Health During Pregnancy</h3>
+        <p class="tip-body">Visit an antenatal clinic at least four times during pregnancy. Eat iron-rich foods like beans, dark greens, and groundnuts daily. Sleep under a treated mosquito net every night — malaria is the leading complication for pregnant women in Uganda.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-labelledby="faq-heading">
+  <div class="section-inner">
+    <div class="section-label">FAQs</div>
+    <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+    <p class="section-sub">Answers to the 15 most common questions from our customers.</p>
+    <div class="faq-list animate" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Where is Kyankima Women's Cooperative located?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>We are based in Mukono District, Uganda, approximately 20 kilometres east of Kampala. Our main collection point is in Kyankima village. We deliver to Kampala and surrounding areas.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">How do I place an order?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>The easiest way is to WhatsApp us on +256 700 000 000 with the product name, quantity, and your delivery location. You can also fill in the contact form on this page and we will reply within 24 hours.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Do you deliver to Kampala?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>Yes. We deliver to Kampala city and major suburbs every Tuesday and Friday. Delivery charges depend on location and order size. Minimum order for delivery is UGX 50,000. We can also arrange same-day delivery for urgent orders at an extra charge.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">What payment methods do you accept?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>We accept MTN Mobile Money, Airtel Money, and cash on delivery. We do not currently accept credit cards. Please send payment before delivery for first-time orders. Regular customers may be offered credit terms.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Are your products organic?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>Most of our agricultural products are grown using traditional, low-input farming methods without synthetic pesticides. We do not yet hold formal organic certification, but we are working toward certification through the Uganda Organic Certification Agency.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Can I visit the cooperative in person?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>Yes, visitors are welcome on Wednesdays and Saturdays between 9 AM and 4 PM. Please WhatsApp ahead to confirm your visit so we can arrange a member to welcome you and show you our workshops and gardens.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">How can I join the cooperative?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>New members are women residing in Mukono District who are involved in agriculture, handcraft production, or community health. Membership requires a one-time registration fee of UGX 10,000 and a monthly contribution of UGX 5,000. Contact Nalwoga Judith directly for details.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Do you do bulk or wholesale orders?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>Yes. We offer discounted rates for orders above UGX 500,000. Hotels, restaurants, schools, and NGOs regularly order in bulk from us. Contact us with your requirements and we will prepare a custom quote within 48 hours.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Can I get a custom handcraft made?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>Absolutely. Our artisans can produce custom baskets, mats, bags, and jewellery in your chosen size, colour, and design. Custom orders typically take 7–14 days and require a 50% deposit upfront.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Are the health tips on this site medical advice?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>No. The health tips shared by our partner health workers are general wellness guidance based on local knowledge and professional experience. They are not a substitute for medical consultation. Please visit your nearest health facility for personal medical concerns.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">How fresh are the vegetables when they arrive?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>All vegetables are harvested the morning of delivery. We do not use cold storage — orders are delivered direct from the farm. Leafy greens are best consumed within 2 days; root vegetables and dried goods last much longer.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Do you ship outside Uganda?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>We do not currently ship fresh produce internationally. However, our dried goods (moringa powder, dried beans, groundnuts) and handcrafts can be shipped internationally. Contact us for a quote including courier costs.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">What is your refund policy?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>If you receive products that are damaged or significantly different from what was ordered, contact us within 24 hours of delivery with a photo and we will arrange a replacement or refund at no cost to you.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">How do you support your members financially?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>Sales revenue is shared among members based on each person's contribution that month. The cooperative also runs a savings scheme (SACCO) where members can access small loans for farm inputs or school fees at low interest rates.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">How can organisations partner with Kyankima?<span class="icon" aria-hidden="true">+</span></button>
+        <div class="faq-a" role="region"><p>We welcome partnerships with NGOs, schools, health organisations, and businesses. We have experience working with community programmes on nutrition, women's empowerment, and sustainable agriculture. Send an email to kyankimawomen@gmail.com to discuss partnership opportunities.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="section-inner">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title" id="contact-heading">Contact Us</h2>
+    <div class="contact-grid animate">
+      <div class="contact-info">
+        <p>Ready to order? Have a question? Reach us directly by WhatsApp, phone, or the form. We respond within 24 hours every day.</p>
+        <div class="contact-detail">
+          <span class="icon" aria-hidden="true">📍</span>
+          <div><strong>Location</strong><span>Kyankima Village, Mukono District, Uganda</span></div>
+        </div>
+        <div class="contact-detail">
+          <span class="icon" aria-hidden="true">📞</span>
+          <div><strong>Phone / WhatsApp</strong><span>+256 700 000 000 (Nalwoga Judith)</span></div>
+        </div>
+        <div class="contact-detail">
+          <span class="icon" aria-hidden="true">✉️</span>
+          <div><strong>Email</strong><span>kyankimawomen@gmail.com</span></div>
+        </div>
+        <div class="contact-detail">
+          <span class="icon" aria-hidden="true">🕐</span>
+          <div><strong>Hours</strong><span>Monday – Saturday, 8 AM – 6 PM EAT</span></div>
+        </div>
+        <a class="whatsapp-btn" href="https://wa.me/256700000000?text=Hello%2C%20I%20would%20like%20to%20order%20from%20Kyankima%20Women%27s%20Cooperative" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+          <span>💬</span> Chat on WhatsApp
+        </a>
+      </div>
+      <div>
+        <div class="contact-form">
+          <form id="contactForm" onsubmit="submitForm(event)" novalidate>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+256 7XX XXX XXX" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="">Select a topic</option>
+                <option>Product Order</option>
+                <option>Bulk / Wholesale Order</option>
+                <option>Custom Handcraft</option>
+                <option>Partnership Enquiry</option>
+                <option>General Question</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us what you need…" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message</button>
+            <div class="form-success" id="formSuccess" role="alert">✅ Thank you! We will reply within 24 hours.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="name">Kyankima Women's Cooperative</div>
+      <p>A registered community-based organisation in Mukono District, Uganda. Founded 2019 by 47 women committed to agriculture, handcrafts, and community health.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="#about">About Us</a>
+      <a href="#products">Our Products</a>
+      <a href="#health">Health Tips</a>
+      <a href="#faq">FAQs</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="https://wa.me/256700000000">WhatsApp Us</a>
+      <a href="mailto:kyankimawomen@gmail.com">Email Us</a>
+      <a href="#contact">Visit Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Kyankima Women's Cooperative. All rights reserved.</span>
+    <span class="badge">🔒 Secure HTTPS</span>
+  </div>
+</footer>
+
+<script>
+// Mobile menu toggle
+function toggleMenu(btn){
+  const menu=document.getElementById('mobileMenu');
+  const isOpen=menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded',isOpen);
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// Product category filter
+function filterProducts(cat,btn){
+  document.querySelectorAll('.tab').forEach(t=>{t.classList.remove('active');t.setAttribute('aria-selected','false')});
+  btn.classList.add('active');btn.setAttribute('aria-selected','true');
+  document.querySelectorAll('.product-card').forEach(card=>{
+    if(cat==='all'||card.dataset.cat===cat){card.classList.remove('hidden')}
+    else{card.classList.add('hidden')}
+  });
+}
+
+// FAQ accordion
+function toggleFaq(btn){
+  const ans=btn.nextElementSibling;
+  const isOpen=ans.classList.toggle('open');
+  btn.classList.toggle('open',isOpen);
+  btn.setAttribute('aria-expanded',isOpen);
+}
+
+// Contact form submission
+function submitForm(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.form-submit');
+  btn.textContent='Sending…';btn.disabled=true;
+  setTimeout(()=>{
+    document.getElementById('formSuccess').style.display='block';
+    e.target.reset();btn.textContent='Send Message';btn.disabled=false;
+  },1200);
+}
+
+// Scroll reveal animation
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('visible')}
+  });
+},{threshold:0.1});
+document.querySelectorAll('.animate').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
